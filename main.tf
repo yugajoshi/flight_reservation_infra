@@ -3,7 +3,7 @@ provider "aws"{
 }
 module "rds-db" {
 	source = "./modules/rds"
-	db-identifier = "flight-rds"
+	db_identifier = "flight-rds"
 	allocated_storage = 20
 	db_engine = "mysql"
 	engine_version = "8.0"
@@ -22,6 +22,7 @@ module "s3-bucket"{
 }
 
 module "eks-cluster" {
+	source = "./modules/eks"
 	project = "flight"
 	desired_nodes = 2
 	min_nodes = 2

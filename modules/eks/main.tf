@@ -39,7 +39,7 @@ data "aws_vpc" "default" {
 data "aws_subnets" "default"{
     filter {
         name = "vpc-id"
-        values = [data.aws_vpc.deault.id]
+        values = [data.aws_vpc.default.id]
     }
 }
 
@@ -57,7 +57,6 @@ resource "aws_eks_node_group" "eks_node_group" {
     update_config {
       max_unavailable = 1
     }
-    subnet_ids = ["subnet-084b469669dbc4ae9","subnet-09b5f106b09903aea","subnet-0e9b4ab2deecdb973"]
 
     depends_on = [ 
         aws_iam_role_policy_attachment.node_group_cluster_policy_attachment,

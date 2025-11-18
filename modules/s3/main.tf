@@ -74,7 +74,3 @@ resource "aws_s3_bucket_acl" "s3-bucket-acl" {
   acl    = "public-read"
 }
 
-output "website_endpoint" {
-  value       = aws_s3_bucket.my-s3-bucket.website_endpoint
-  description = "The URL to access the static website"
-}

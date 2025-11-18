@@ -29,7 +29,7 @@ resource "aws_db_subnet_group" "default" {
   
 }
 
-resource "aws_security_group" "rds-security_group" {
+resource "aws_security_group" "rds_security_group" {
     name = "terraform-db-sg"
     description = "Allow RDS Port"
     vpc_id = data.aws_vpc.default.id
